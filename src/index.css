@@ -138,8 +138,9 @@ body {
 }
 
 body {
-  color: var(--color-body-text);
   background-color: var(--color-background);
+  color: var(--color-body-text);
+  font-family: var(--font-body);
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
 }
@@ -182,6 +183,9 @@ h4,
 h5,
 h6 {
   color: var(--color-header-text);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
   text-wrap: balance;
 }
 
@@ -223,6 +227,7 @@ button {
 }
 
 p {
+  line-height: 1.5;
   max-width: 65ch;
 }
 
@@ -302,4 +307,20 @@ p {
 
     transform: translateX(-50%);
   }
+}
+
+/*~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~>
+<~~         Specifics          ~~>
+<~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~*/
+
+.theme-toggle-btn {
+  align-items: center;
+  color: currentColor;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  gap: 1rem;
+  letter-spacing: 2.5px;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
