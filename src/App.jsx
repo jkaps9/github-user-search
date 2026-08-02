@@ -5,7 +5,9 @@ export default function App() {
     <>
       <Header></Header>
       <main>
-        <SearchBar></SearchBar>
+        <div className="container">
+          <SearchBar></SearchBar>
+        </div>
       </main>
     </>
   );

@@ -1,6 +1,8 @@
+import styles from "./SearchBar.module.css";
+
 export default function SearchBar() {
   return (
-    <div>
+    <div className={`${styles.searchBar} row`}>
       <label htmlFor="search" className="sr-only">
         Search
       </label>

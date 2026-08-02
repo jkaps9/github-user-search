@@ -1,0 +1,5 @@
+.searchBar {
+  background-color: var(--color-background-surface);
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+}
