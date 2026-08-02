@@ -1,9 +1,9 @@
-import ThemeToggle from "./components/ThemeToggle";
+import Header from "./components/Header";
 
 export default function App() {
   return (
     <>
-      <ThemeToggle></ThemeToggle>
+      <Header></Header>
       <h1>Github User Search</h1>
     </>
   );
