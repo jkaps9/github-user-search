@@ -62,6 +62,7 @@
   --color-background-surface: var(--colors-neutral-0);
   --color-header-text: var(--colors-neutral-700);
   --color-body-text: var(--colors-neutral-500);
+  --color-text-on-primary: var(--colors-neutral-0);
 
   --color-error: var(--colors-red-500);
 
@@ -276,17 +277,18 @@ h1 {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
 
-  &--solid {
-    background-color: var(--color-primary);
+.btn--solid {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  line-height: 1.5;
+  &:hover,
+  &:focus {
+    background-color: transparent;
     border-color: var(--color-primary);
     color: var(--color-body-text);
-    &:hover,
-    &:focus {
-      background-color: transparent;
-      border-color: var(--color-primary);
-      color: var(--color-body-text);
-    }
   }
 }
 
