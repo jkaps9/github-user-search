@@ -141,6 +141,8 @@ body {
   background-color: var(--color-background);
   color: var(--color-body-text);
   font-family: var(--font-body);
+  padding-inline: clamp(1rem, 0.0458rem + 4.0712vw, 2rem);
+  padding-block: clamp(2rem, 1.5229rem + 2.0356vw, 2.5rem);
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
 }
@@ -231,6 +233,11 @@ p {
   max-width: 65ch;
 }
 
+h1 {
+  font-size: 1.625rem;
+  line-height: 1;
+}
+
 /*~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~>
 <~~         Utilities          ~~>
 <~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~*/
@@ -240,6 +247,12 @@ p {
   margin-inline: auto;
   max-width: var(--container-max);
   padding-inline: var(--container-padding);
+}
+
+.row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .btn {
