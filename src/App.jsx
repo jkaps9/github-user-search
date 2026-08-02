@@ -4,7 +4,6 @@ export default function App() {
   return (
     <>
       <Header></Header>
-      <h1>Github User Search</h1>
     </>
   );
 }
