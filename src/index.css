@@ -40,11 +40,11 @@
   /* Colors */
   --color-primary: var(--colors-blue-500);
   --color-accent: var(--colors-blue-300);
-  --color-background: var(--colors-neutral-900);
+  --color-background: var(--colors-neutral-100);
 
-  --color-background-surface: var(--colors-neutral-800);
-  --color-header-text: var(--colors-neutral-0);
-  --color-body-text: var(--colors-neutral-0);
+  --color-background-surface: var(--colors-neutral-870);
+  --color-header-text: var(--colors-neutral-700);
+  --color-body-text: var(--colors-neutral-500);
 
   --color-error: var(--colors-red-500);
 
@@ -197,4 +197,84 @@ button {
 
 p {
   max-width: 65ch;
+}
+
+/*~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~>
+<~~         Utilities          ~~>
+<~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~*/
+
+.container {
+  width: 100%;
+  margin-inline: auto;
+  max-width: var(--container-max);
+  padding-inline: var(--container-padding);
+}
+
+.btn {
+  border-radius: 0.5rem;
+  border-style: none;
+  border: 2px solid transparent;
+  display: inline-block;
+  font-weight: 700;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 0.6em 1.5em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s,
+    color 0.3s;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  &--solid {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-body-text);
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      border-color: var(--color-primary);
+      color: var(--color-body-text);
+    }
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: inset(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap; /* prevent wrapping */
+}
+
+.skip {
+  background-color: var(--color-primary);
+  color: var(--color-header);
+  left: -9999px;
+  opacity: 0; //Sets the link's opacity to 0, making it fully transparent and invisible.
+  padding: 1rem 1.5rem;
+  position: absolute; //Positions the link absolutely on the page, allowing it to be placed anywhere.
+  z-index: 999; //Sets a high z-index, ensuring that the link will be on top of other page elements if it becomes visible.
+
+  &:focus {
+    font-weight: 700;
+    left: 50%; // When the link receives focus (e.g., when a keyboard user tabs to it), it is repositioned horizontally to the centre of the screen.
+    opacity: 1; //The link's opacity is set to 1, making it fully visible.
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+
+    transform: translateX(
+      -50%
+    ); //This centres the link horizontally by moving it back to the left by 50% of its own width.
+  }
 }
