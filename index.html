@@ -5,6 +5,24 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>github-user-search</title>
+
+    <script>
+      (function () {
+        // 1. Check for previously saved user preference
+        const savedTheme = localStorage.getItem("theme");
+
+        // 2. Fall back to system media query if no saved preference exists
+        const systemPrefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+
+        // 3. Determine the final active theme
+        const theme = savedTheme || (systemPrefersDark ? "dark" : "light");
+
+        // 4. Set an attribute on the root <html> tag for CSS targeting
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

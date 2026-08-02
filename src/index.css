@@ -56,10 +56,10 @@
 
   /* Colors */
   --color-primary: var(--colors-blue-500);
-  --color-accent: var(--colors-blue-300);
+  --color-accent: var(--colors-blue-500);
   --color-background: var(--colors-neutral-100);
 
-  --color-background-surface: var(--colors-neutral-870);
+  --color-background-surface: var(--colors-neutral-0);
   --color-header-text: var(--colors-neutral-700);
   --color-body-text: var(--colors-neutral-500);
 
@@ -87,6 +87,16 @@
   /* Transition */
   /* --transition: #{$transition-base};
   --transition-slow: #{$transition-slow}; */
+}
+
+[data-theme="dark"] {
+  --color-primary: var(--colors-blue-500);
+  --color-accent: var(--colors-blue-500);
+  --color-background: var(--colors-neutral-900);
+
+  --color-background-surface: var(--colors-neutral-800);
+  --color-header-text: var(--colors-neutral-0);
+  --color-body-text: var(--colors-neutral-0);
 }
 
 body {
@@ -271,7 +281,7 @@ p {
   overflow: hidden;
   clip: inset(0, 0, 0, 0);
   border: 0;
-  white-space: nowrap; /* prevent wrapping */
+  white-space: nowrap;
 }
 
 .skip {
