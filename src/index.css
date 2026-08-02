@@ -1,0 +1,200 @@
+:root {
+  --colors-blue-300: #60abff;
+  --colors-blue-500: #0079ff;
+  --colors-red-500: #f74646;
+
+  --colors-neutral-0: #ffffff;
+  --colors-neutral-100: #f6f8ff;
+  --colors-neutral-200: #90a4d4;
+  --colors-neutral-300: #697c9a;
+  --colors-neutral-500: #4b6a9b;
+  --colors-neutral-700: #2b3442;
+  --colors-neutral-800: #1e2a47;
+  --colors-neutral-900: #141d2f;
+
+  --spacing-0: 0;
+  --spacing-100: 8;
+  --spacing-150: 12;
+  --spacing-200: 16;
+  --spacing-250: 20;
+  --spacing-300: 24;
+  --spacing-400: 32;
+  --spacing-500: 40;
+  --spacing-600: 48;
+  --spacing-800: 64;
+  --spacing-1000: 80;
+  --spacing-025: 2;
+  --spacing-050: 4;
+  --spacing-075: 6;
+  --cornerradius-0: 0;
+  --cornerradius-4: 4;
+  --cornerradius-6: 6;
+  --cornerradius-8: 8;
+  --cornerradius-10: 10;
+  --cornerradius-12: 12;
+  --cornerradius-16: 16;
+  --cornerradius-20: 20;
+  --cornerradius-24: 24;
+  --cornerradius-full: 999;
+
+  /* Colors */
+  --color-primary: var(--colors-blue-500);
+  --color-accent: var(--colors-blue-300);
+  --color-background: var(--colors-neutral-900);
+
+  --color-background-surface: var(--colors-neutral-800);
+  --color-header-text: var(--colors-neutral-0);
+  --color-body-text: var(--colors-neutral-0);
+
+  --color-error: var(--colors-red-500);
+
+  /* Typography */
+  --font-heading: #{$font-heading};
+  --font-body: #{$font-body};
+
+  /* Layout */
+  --container-max: #{$container-max};
+  --container-padding: #{$container-padding};
+
+  /* Radius */
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-pill: #{$radius-pill};
+
+  /* Shadows */
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+
+  /* Transition */
+  --transition: #{$transition-base};
+  --transition-slow: #{$transition-slow};
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/*~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~>
+<~~           Reset            ~~>
+<~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+    overflow-x: hidden;
+  }
+}
+
+body {
+  color: var(--color-body-text);
+  background-color: var(--color-background);
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-header-text);
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*
+  11. My own items
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+p {
+  max-width: 65ch;
+}
