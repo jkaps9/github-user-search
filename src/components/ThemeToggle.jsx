@@ -30,6 +30,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggleTheme}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-live="polite"
       className="theme-toggle-btn"
     >
       {isDark ? (
