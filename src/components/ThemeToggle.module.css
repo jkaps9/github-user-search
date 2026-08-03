@@ -14,3 +14,12 @@
     color: var(--color-header-text);
   }
 }
+
+[data-theme="dark"] {
+  .themeToggleBtn {
+    color: var(--colors-neutral-200);
+    &:hover {
+      color: var(--color-header-text);
+    }
+  }
+}
