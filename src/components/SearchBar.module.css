@@ -29,7 +29,6 @@
 
 .searchError {
   color: var(--color-error);
-  display: none;
   font-weight: 700;
   text-wrap: nowrap;
 }

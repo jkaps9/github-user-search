@@ -2,7 +2,7 @@ import styles from "./SearchBar.module.css";
 import searchIcon from "../assets/icons/icon-search.svg";
 import { useState } from "react";
 
-export default function SearchBar({ onApply }) {
+export default function SearchBar({ onApply, errorMessage }) {
   const [draftUser, setDraftUser] = useState("");
 
   const handleChange = (e) => {
@@ -43,11 +43,16 @@ export default function SearchBar({ onApply }) {
         placeholder="Search GitHub username..."
         value={draftUser}
         onChange={handleChange}
+        aria-invalid={errorMessage !== null ? "true" : "false"}
         aria-describedby="search-error"
       />
-      <p id="search-error" className={styles.searchError}>
-        No results
-      </p>
+      {errorMessage !== null ? (
+        <p id="search-error" className={styles.searchError}>
+          No results
+        </p>
+      ) : (
+        <></>
+      )}
       <button className="btn btn--solid" type="submit">
         Search
       </button>
