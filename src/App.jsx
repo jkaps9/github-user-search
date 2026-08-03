@@ -19,6 +19,7 @@ export default function App() {
   useEffect(() => {
     const fetchData = async () => {
       setError(null);
+      setLoading(true);
       try {
         const response = await fetch(`${BASE_URL}/${currentUser}`);
         if (!response.ok) {
@@ -55,14 +56,15 @@ export default function App() {
           </div>
         ) : (
           <>
-            {loading ?? (
+            {loading ? (
               <div className="card">
                 <h2>Loading...</h2>{" "}
               </div>
+            ) : (
+              <Profile userData={data}></Profile>
             )}
           </>
         )}
-        <Profile userData={data}></Profile>
       </div>
     </>
   );

@@ -67,6 +67,8 @@ How to fetch API data in React using useEffect(). Was able to pass data up/down 
 
 My loading state does not show when new data is loading. Need to figure out how to show that.
 
+Update: RESOLVED! I was not resetting loading to true inside the fetch call so it never got reset. Plus, I was using a nullish coalescing operator which did not allow the loading state to be shown even when it was set to true.
+
 ## Author
 
 - Frontend Mentor - [@jkaps9](https://www.frontendmentor.io/profile/jkaps9)
