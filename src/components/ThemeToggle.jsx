@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import sunIcon from "../assets/icons/icon-sun.svg";
 import moonIcon from "../assets/icons/icon-moon.svg";
+import styles from "./ThemeToggle.module.css";
 
 export default function ThemeToggle() {
   const [isDark, setIsDark] = useState(() => {
@@ -31,7 +32,7 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       aria-live="polite"
-      className="theme-toggle-btn"
+      className={styles.themeToggleBtn}
     >
       {isDark ? (
         <>

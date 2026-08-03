@@ -1,0 +1,11 @@
+.themeToggleBtn {
+  align-items: center;
+  color: currentColor;
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  gap: 1rem;
+  letter-spacing: 2.5px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
