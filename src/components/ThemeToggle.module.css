@@ -1,6 +1,6 @@
 .themeToggleBtn {
   align-items: center;
-  color: currentColor;
+  color: var(--color-body-text);
   display: inline-flex;
   font-size: 0.75rem;
   font-weight: 700;
@@ -8,4 +8,17 @@
   letter-spacing: 2.5px;
   line-height: 1.4;
   text-transform: uppercase;
+  transition: color 0.3s;
+
+  svg {
+    fill: var(--color-error);
+  }
+
+  &:hover {
+    color: var(--color-header-text);
+
+    svg * {
+      fill: var(--color-header-text);
+    }
+  }
 }
