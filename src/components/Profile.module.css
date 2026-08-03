@@ -94,6 +94,11 @@
   }
 }
 
+.link {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @media (min-width: 768px) {
   .profileImage {
     grid-row: span 2;
