@@ -30,7 +30,7 @@ export default function App() {
         setData(result);
       } catch (err) {
         setError(err.message);
-        setData([]);
+        setData(null);
       } finally {
         setLoading(false);
       }
