@@ -14,8 +14,8 @@
 .profileImage {
   background: lightgray 50% / cover no-repeat;
   border-radius: calc(var(--corner-radius-full) / 16 * 1rem);
-  height: 70px;
-  width: 70px;
+  height: clamp(4.375rem, 3.3407rem + 4.4131vw, 7.3125rem);
+  width: clamp(4.375rem, 3.3407rem + 4.4131vw, 7.3125rem);
   overflow: hidden;
 }
 
@@ -23,6 +23,11 @@
   display: flex;
   flex-direction: column;
   gap: calc(var(--spacing-050) / 16 * 1rem);
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing-050) / 16 * 1rem);
+  }
 }
 
 .profileDetails {
@@ -36,7 +41,11 @@
   background-color: var(--color-background);
   border-radius: calc(var(--corner-radius-10) / 16 * 1rem);
   padding: calc(var(--spacing-200) / 16 * 1rem)
-    calc(var(--spacing-250) / 16 * 1rem);
+    clamp(
+      calc(var(--spacing-250) / 16 * 1rem),
+      0.9859rem + 1.1268vw,
+      calc(var(--spacing-400) / 16 * 1rem)
+    );
 }
 
 .statKey {
@@ -50,9 +59,14 @@
   font-weight: 700;
 }
 
-.profileList {
+.profileListStats {
   display: flex;
   flex-direction: column;
+  gap: calc(var(--spacing-200) / 16 * 1rem);
+}
+
+.profileListLinks {
+  display: grid;
   gap: calc(var(--spacing-200) / 16 * 1rem);
 }
 
@@ -71,5 +85,34 @@
   a:hover {
     cursor: not-allowed;
     text-decoration: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .profileImage {
+    grid-row: span 2;
+  }
+  .profileHeader {
+    flex-direction: row;
+    justify-content: space-between;
+    div {
+      gap: calc(var(--spacing-025) / 16 * 1rem);
+    }
+  }
+
+  .profileDetails {
+    grid-column: 2 / span 1;
+  }
+
+  .profileListStats {
+    flex-direction: row;
+
+    li {
+      flex: 1;
+    }
+  }
+
+  .profileListLinks {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

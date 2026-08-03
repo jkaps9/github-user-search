@@ -9,16 +9,20 @@ export default function Profile() {
     <div className={styles.profileCard}>
       <div className={styles.profileImage}></div>
       <div className={styles.profileHeader}>
-        <h2 id="displayName">The Octocat</h2>
-        <p id="userName" className="accent-text">
-          @octocat
-        </p>
+        <div>
+          <h2 id="displayName">The Octocat</h2>
+          <p id="userName" className="accent-text">
+            @octocat
+          </p>
+        </div>
         <p id="joinDate">Joined 25 Jan 2011</p>
       </div>
       <div className={styles.profileDetails}>
-        <p id="bio">This profile has no bio</p>
+        <p id="bio" className={styles.notAvailable}>
+          This profile has no bio
+        </p>
         <div className={styles.profileStats}>
-          <ul className={styles.profileList}>
+          <ul className={styles.profileListStats}>
             <li>
               <p className={styles.statKey}>Repos</p>
               <p className={styles.statValue}>8</p>
@@ -34,7 +38,7 @@ export default function Profile() {
           </ul>
         </div>
         <div className={styles.profileLinks}>
-          <ul className={styles.profileList}>
+          <ul className={styles.profileListLinks}>
             <li className={styles.profileListRow}>
               <img
                 src={locationIcon}
