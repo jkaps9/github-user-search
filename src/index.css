@@ -106,7 +106,6 @@ body {
 }
 
 #root {
-  border-inline: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   gap: clamp(2rem, 1.8239rem + 0.7512vw, 2.5rem);
