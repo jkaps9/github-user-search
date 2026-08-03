@@ -20,7 +20,6 @@ export default function App() {
     const fetchData = async () => {
       setError(null);
       setLoading(true);
-      console.log("fetching:", currentUser);
       try {
         const response = await fetch(`${BASE_URL}/${currentUser}`);
         if (!response.ok) {
