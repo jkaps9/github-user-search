@@ -7,14 +7,13 @@ export default function SearchBar({ onApply, errorMessage }) {
 
   const handleChange = (e) => {
     const { value } = e.target;
-    setDraftUser(value);
+    const sanitizedValue = (value || "").replace(/[^a-zA-Z0-9-]/g, "");
+    setDraftUser(sanitizedValue);
   };
 
   const validateForm = () => {
-    let isValid = true;
-    if (draftUser === "") {
-      isValid = false;
-    }
+    const sanitizedUser = (draftUser || "").replace(/[^a-zA-Z0-9-]/g, "");
+    let isValid = sanitizedUser.trim().length !== 0;
     return isValid;
   };
 

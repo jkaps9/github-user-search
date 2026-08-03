@@ -7,7 +7,7 @@ import companyIcon from "../assets/icons/icon-company.svg";
 export default function Profile({ userData }) {
   const createdDate = userData ? new Date(userData.created_at) : new Date();
 
-  if (!userData) return <></>;
+  if (!userData) return null;
 
   return (
     <div className={`card ${styles.profileCard}`}>
