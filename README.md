@@ -34,14 +34,22 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.png)
+#### Dark mode
 
-![](./screenshot-light-mode.png)
+<img src="./screenshot.png" width="700">
+
+#### Light mode
+
+<img src="./screenshot-light-mode.png" width="700">
+
+#### Mobile
+
+<img src="./screenshot-mobile.png" width="375">
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/jkaps9/github-user-search](https://github.com/jkaps9/github-user-search)
+- Live Site URL: [https://jkaps9.github.io/github-user-search](https://jkaps9.github.io/github-user-search)
 
 ## My process
 
