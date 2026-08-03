@@ -12,10 +12,7 @@ This is a solution to the [GitHub user search app challenge on Frontend Mentor](
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-  - [AI Collaboration](#ai-collaboration)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -25,12 +22,12 @@ This is a solution to the [GitHub user search app challenge on Frontend Mentor](
 
 Users should be able to:
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Search for GitHub users by their username
-- See relevant user information based on their search
-- Switch between light and dark themes
-- **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
+- [x] View the optimal layout for the app depending on their device's screen size
+- [x] See hover states for all interactive elements on the page
+- [x] Search for GitHub users by their username
+- [x] See relevant user information based on their search
+- [x] Switch between light and dark themes
+- [x] **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
 
 ### Screenshot
 
@@ -63,6 +60,12 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 
 ### What I learned
+
+How to fetch API data in React using useEffect(). Was able to pass data up/down between the search component and the display components through App.jsx as the single source of truth.
+
+### Continued Development
+
+My loading state does not show when new data is loading. Need to figure out how to show that.
 
 ## Author
 
