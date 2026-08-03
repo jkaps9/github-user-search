@@ -18,7 +18,7 @@ export default function Profile() {
       <div className={styles.profileDetails}>
         <p id="bio">This profile has no bio</p>
         <div className={styles.profileStats}>
-          <ul>
+          <ul className={styles.profileList}>
             <li>
               <p className={styles.statKey}>Repos</p>
               <p className={styles.statValue}>8</p>
@@ -34,19 +34,17 @@ export default function Profile() {
           </ul>
         </div>
         <div className={styles.profileLinks}>
-          <ul>
-            <li>
+          <ul className={styles.profileList}>
+            <li className={styles.profileListRow}>
               <img
                 src={locationIcon}
                 alt=""
                 aria-hidden="true"
                 className={styles.linkIcon}
               />
-              <a href="/" className={styles.link}>
-                San Francisco
-              </a>
+              <p className={styles.link}>San Francisco</p>
             </li>
-            <li>
+            <li className={`${styles.profileListRow} ${styles.notAvailable}`}>
               <img
                 src={twitterIcon}
                 alt=""
@@ -57,7 +55,7 @@ export default function Profile() {
                 Not Available
               </a>
             </li>
-            <li>
+            <li className={styles.profileListRow}>
               <img
                 src={websiteIcon}
                 alt=""
@@ -68,7 +66,7 @@ export default function Profile() {
                 https://github.blog
               </a>
             </li>
-            <li>
+            <li className={styles.profileListRow}>
               <img
                 src={companyIcon}
                 alt=""
