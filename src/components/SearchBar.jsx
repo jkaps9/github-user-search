@@ -4,7 +4,12 @@ import searchIcon from "../assets/icons/icon-search.svg";
 export default function SearchBar() {
   return (
     <form className={`${styles.searchBar} row`}>
-      <img src={searchIcon} alt="" aria-hidden="true" />
+      <img
+        src={searchIcon}
+        alt=""
+        aria-hidden="true"
+        className={styles.searchImage}
+      />
       <label htmlFor="search" className="sr-only">
         Search
       </label>

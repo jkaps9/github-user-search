@@ -243,8 +243,13 @@ h1 {
 input {
   background-color: transparent;
   border: none;
+  color: var(--color-header-text);
+  font-size: clamp(0.8125rem, 0.7025rem + 0.4695vw, 1.125rem);
   outline: none;
   width: 100%;
+  &::placeholder {
+    color: var(--color-header-text);
+  }
 }
 
 /*~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~>
@@ -316,7 +321,7 @@ input {
 
 .skip {
   background-color: var(--color-primary);
-  color: var(--color-header);
+  color: var(--color-header-text);
   left: -9999px;
   opacity: 0;
   padding: 1rem 1.5rem;
