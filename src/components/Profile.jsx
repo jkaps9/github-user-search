@@ -25,7 +25,7 @@ export default function Profile({ userData }) {
         </p>
       </div>
       <div className={styles.profileDetails}>
-        <p id="bio" className={styles.notAvailable}>
+        <p id="bio" className={!userData.bio ? styles.notAvailable : undefined}>
           {userData.bio || "This profile has no bio"}
         </p>
         <div className={styles.profileStats}>
@@ -46,7 +46,9 @@ export default function Profile({ userData }) {
         </div>
         <div className={styles.profileLinks}>
           <ul className={styles.profileListLinks}>
-            <li className={styles.profileListRow}>
+            <li
+              className={`${styles.profileListRow} ${!userData.location ? styles.notAvailable : undefined}`}
+            >
               <img
                 src={locationIcon}
                 alt=""
@@ -57,7 +59,9 @@ export default function Profile({ userData }) {
                 {userData.location || "Not Available"}
               </p>
             </li>
-            <li className={`${styles.profileListRow} ${styles.notAvailable}`}>
+            <li
+              className={`${styles.profileListRow} ${!userData.twitter_username ? styles.notAvailable : undefined}`}
+            >
               <img
                 src={twitterIcon}
                 alt=""
@@ -68,7 +72,9 @@ export default function Profile({ userData }) {
                 {userData.twitter_username || "Not Available"}
               </a>
             </li>
-            <li className={styles.profileListRow}>
+            <li
+              className={`${styles.profileListRow} ${!userData.blog ? styles.notAvailable : undefined}`}
+            >
               <img
                 src={websiteIcon}
                 alt=""
@@ -79,7 +85,9 @@ export default function Profile({ userData }) {
                 {userData.blog || "Not Available"}
               </a>
             </li>
-            <li className={styles.profileListRow}>
+            <li
+              className={`${styles.profileListRow} ${!userData.company ? styles.notAvailable : undefined}`}
+            >
               <img
                 src={companyIcon}
                 alt=""
