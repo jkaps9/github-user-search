@@ -43,19 +43,20 @@
   --spacing-025: 2;
   --spacing-050: 4;
   --spacing-075: 6;
-  --cornerradius-0: 0;
-  --cornerradius-4: 4;
-  --cornerradius-6: 6;
-  --cornerradius-8: 8;
-  --cornerradius-10: 10;
-  --cornerradius-12: 12;
-  --cornerradius-16: 16;
-  --cornerradius-20: 20;
-  --cornerradius-24: 24;
-  --cornerradius-full: 999;
+  --corner-radius-0: 0;
+  --corner-radius-4: 4;
+  --corner-radius-6: 6;
+  --corner-radius-8: 8;
+  --corner-radius-10: 10;
+  --corner-radius-12: 12;
+  --corner-radius-16: 16;
+  --corner-radius-20: 20;
+  --corner-radius-24: 24;
+  --corner-radius-full: 999;
 
   /* Colors */
   --color-primary: var(--colors-blue-500);
+  --color-primary-hover: var(--colors-blue-300);
   --color-accent: var(--colors-blue-500);
   --color-background: var(--colors-neutral-100);
 
@@ -203,9 +204,10 @@ p {
   isolation: isolate;
 }
 
-/*
-  11. My own items
-*/
+/*~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~>
+<~~    Global Element Styles   ~~>
+<~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~*/
+
 html {
   scroll-behavior: smooth;
 }
@@ -238,6 +240,12 @@ h1 {
   line-height: 1;
 }
 
+input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
 /*~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~>
 <~~         Utilities          ~~>
 <~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~*/
@@ -256,22 +264,20 @@ h1 {
 }
 
 .btn {
-  border-radius: 0.5rem;
+  border-radius: calc(var(--corner-radius-10) / 16 * 1rem);
   border-style: none;
-  border: 2px solid transparent;
   display: inline-block;
   font-weight: 700;
   list-style: none;
   margin: 0;
   outline: none;
-  padding: 0.6em 1.5em;
+  padding: 0.75em 1.5em;
   position: relative;
   text-align: center;
   text-decoration: none;
   transition:
     background-color 0.3s,
-    border-color 0.3s,
-    color 0.3s;
+    box-shadow 0.3s;
   vertical-align: baseline;
   user-select: none;
   -webkit-user-select: none;
@@ -280,14 +286,18 @@ h1 {
 
 .btn--solid {
   background-color: var(--color-primary);
-  border-color: var(--color-primary);
   color: var(--color-text-on-primary);
   line-height: 1.5;
-  &:hover,
+
+  &:hover {
+    background-color: var(--color-primary-hover);
+  }
+
   &:focus {
-    background-color: transparent;
-    border-color: var(--color-primary);
-    color: var(--color-body-text);
+    background-color: var(--color-primary);
+    box-shadow:
+      0 0 0 2px #fff,
+      0 0 0 4px var(--color-primary);
   }
 }
 

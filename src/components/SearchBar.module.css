@@ -1,5 +1,14 @@
 .searchBar {
   background-color: var(--color-background-surface);
+  border-radius: calc(var(--corner-radius-16) / 16 * 1rem);
+  box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
   padding: 0.5rem 0.75rem;
-  width: 100%;
+  transition: box-shadow 0.3s;
+
+  &:has(input:focus-visible) {
+    box-shadow:
+      0 0 0 3px var(--color-background),
+      0 0 0 5px var(--color-primary),
+      0 16px 30px -10px;
+  }
 }
