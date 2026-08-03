@@ -1,0 +1,16 @@
+.profileCard {
+  background-color: var(--color-background-surface);
+  border-radius: calc(var(--corner-radius-16) / 16 * 1rem);
+  box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
+  padding: calc(var(--spacing-400) / 16 * 1rem)
+    calc(var(--spacing-300) / 16 * 1rem);
+}
+
+.profileImage {
+  background: lightgray 50% / cover no-repeat;
+  border-radius: calc(var(--corner-radius-full) / 16 * 1rem);
+  min-height: 70px;
+  min-width: 70px;
+  overflow: hidden;
+  width: fit-content;
+}

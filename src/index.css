@@ -256,6 +256,10 @@ input {
 <~~         Utilities          ~~>
 <~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~ ~*/
 
+.accent-text {
+  color: var(--color-accent);
+}
+
 .container {
   width: 100%;
   margin-inline: auto;

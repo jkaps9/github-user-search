@@ -5,12 +5,12 @@ export default function App() {
   return (
     <>
       <Header></Header>
-      <main>
-        <div className="container">
-          <SearchBar></SearchBar>
-          <Profile></Profile>
-        </div>
-      </main>
+      <div className="container">
+        <SearchBar></SearchBar>
+      </div>
+      <div className="container">
+        <Profile></Profile>
+      </div>
     </>
   );
 }
