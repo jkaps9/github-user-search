@@ -2,6 +2,7 @@
   background-color: var(--color-background-surface);
   border-radius: calc(var(--corner-radius-16) / 16 * 1rem);
   box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
+  gap: clamp(0.5rem, 0.1479rem + 1.5023vw, 1.5rem);
   padding: 0.5rem 0.75rem;
   transition: box-shadow 0.3s;
 
@@ -11,4 +12,11 @@
       0 0 0 5px var(--color-primary),
       0 16px 30px -10px;
   }
+}
+
+.searchError {
+  color: var(--color-error);
+  display: none;
+  font-weight: 700;
+  text-wrap: nowrap;
 }
