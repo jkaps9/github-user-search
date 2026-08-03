@@ -11,6 +11,12 @@
   text-align: start;
 }
 
+[data-theme="dark"] {
+  .profileCard {
+    box-shadow: none;
+  }
+}
+
 .profileImage {
   background: lightgray 50% / cover no-repeat;
   border-radius: calc(var(--corner-radius-full) / 16 * 1rem);
