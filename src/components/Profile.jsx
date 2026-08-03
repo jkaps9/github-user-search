@@ -12,12 +12,14 @@ export default function Profile({ userData }) {
       <div className={styles.profileImage}></div>
       <div className={styles.profileHeader}>
         <div>
-          <h2 id="displayName">{userData.name}</h2>
-          <p id="userName" className="accent-text">
-            @{userData.login}
-          </p>
+          {userData.name ? (
+            <h2>{userData.name}</h2>
+          ) : (
+            <h2 className={styles.notAvailable}>Anonymous</h2>
+          )}
+          <p className="accent-text">@{userData.login}</p>
         </div>
-        <p id="joinDate">
+        <p>
           Joined{" "}
           {createdDate.toLocaleString("en-us", {
             dateStyle: "medium",
@@ -25,7 +27,7 @@ export default function Profile({ userData }) {
         </p>
       </div>
       <div className={styles.profileDetails}>
-        <p id="bio" className={!userData.bio ? styles.notAvailable : undefined}>
+        <p className={!userData.bio ? styles.notAvailable : undefined}>
           {userData.bio || "This profile has no bio"}
         </p>
         <div className={styles.profileStats}>
@@ -55,9 +57,11 @@ export default function Profile({ userData }) {
                 aria-hidden="true"
                 className={styles.linkIcon}
               />
-              <p className={styles.link}>
-                {userData.location || "Not Available"}
-              </p>
+              {userData.location ? (
+                <span>{userData.location}</span>
+              ) : (
+                <span className={styles.notAvailable}>Not Available</span>
+              )}
             </li>
             <li
               className={`${styles.profileListRow} ${!userData.twitter_username ? styles.notAvailable : undefined}`}
@@ -68,9 +72,16 @@ export default function Profile({ userData }) {
                 aria-hidden="true"
                 className={styles.linkIcon}
               />
-              <a href="/" className={styles.link}>
-                {userData.twitter_username || "Not Available"}
-              </a>
+              {userData.twitter_username ? (
+                <a
+                  href={`https://twitter.com/${userData.twitter_username}`}
+                  className={styles.link}
+                >
+                  {userData.twitter_username}
+                </a>
+              ) : (
+                <span className={styles.notAvailable}>Not Available</span>
+              )}
             </li>
             <li
               className={`${styles.profileListRow} ${!userData.blog ? styles.notAvailable : undefined}`}
@@ -81,9 +92,13 @@ export default function Profile({ userData }) {
                 aria-hidden="true"
                 className={styles.linkIcon}
               />
-              <a href="/" className={styles.link}>
-                {userData.blog || "Not Available"}
-              </a>
+              {userData.blog ? (
+                <a href={userData.blog} className={styles.link}>
+                  {userData.blog}
+                </a>
+              ) : (
+                <span className={styles.notAvailable}>Not Available</span>
+              )}
             </li>
             <li
               className={`${styles.profileListRow} ${!userData.company ? styles.notAvailable : undefined}`}
@@ -94,9 +109,11 @@ export default function Profile({ userData }) {
                 aria-hidden="true"
                 className={styles.linkIcon}
               />
-              <a href="/" className={styles.link}>
-                {userData.company || "Not Available"}
-              </a>
+              {userData.company ? (
+                <span>{userData.company}</span>
+              ) : (
+                <span className={styles.notAvailable}>Not Available</span>
+              )}
             </li>
           </ul>
         </div>
