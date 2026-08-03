@@ -66,11 +66,24 @@
 
 .profileListRow {
   align-items: flex-end;
+  border-radius: calc(var(--corner-radius-4) / 16 * 1rem);
   display: flex;
   gap: calc(var(--spacing-200) / 16 * 1rem);
 
-  a:hover {
-    text-decoration: underline;
+  &:has(.link:focus) {
+    box-shadow:
+      0 0 0 3px var(--color-background),
+      0 0 0 5px var(--color-primary);
+  }
+}
+
+[data-theme="dark"] {
+  .profileListRow {
+    &:has(.link:focus) {
+      box-shadow:
+        0 0 0 3px var(--colors-neutral-800),
+        0 0 0 5px var(--color-primary);
+    }
   }
 }
 
@@ -83,8 +96,13 @@
 }
 
 .link {
+  outline: none;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 @media (min-width: 768px) {
