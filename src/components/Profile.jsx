@@ -5,10 +5,9 @@ import websiteIcon from "../assets/icons/icon-website.svg";
 import companyIcon from "../assets/icons/icon-company.svg";
 
 export default function Profile({ userData }) {
-  const createdDate =
-    userData.length === 0 ? new Date() : new Date(userData.created_at);
+  const createdDate = userData ? new Date(userData.created_at) : new Date();
 
-  if (userData.length === 0) return <></>;
+  if (!userData) return <></>;
 
   return (
     <div className={`card ${styles.profileCard}`}>

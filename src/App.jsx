@@ -7,7 +7,7 @@ import { useEffect } from "react";
 const BASE_URL = "https://api.github.com/users";
 
 export default function App() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentUser, setCurrentUser] = useState("octocat");
