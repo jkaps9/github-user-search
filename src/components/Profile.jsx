@@ -9,7 +9,12 @@ export default function Profile({ userData }) {
 
   return (
     <div className={styles.profileCard}>
-      <div className={styles.profileImage}></div>
+      <div className={styles.profileImage}>
+        <img
+          src={userData.avatar_url}
+          alt={`${userData.login || "user"} avatar`}
+        />
+      </div>
       <div className={styles.profileHeader}>
         <div>
           {userData.name ? (
