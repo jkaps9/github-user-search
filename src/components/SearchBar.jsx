@@ -2,7 +2,7 @@ import styles from "./SearchBar.module.css";
 
 export default function SearchBar() {
   return (
-    <div className={`${styles.searchBar} row`}>
+    <form className={`${styles.searchBar} row`}>
       <label htmlFor="search" className="sr-only">
         Search
       </label>
@@ -12,7 +12,9 @@ export default function SearchBar() {
         name="search"
         placeholder="Search GitHub username..."
       />
-      <button className="btn btn--solid">Search</button>
-    </div>
+      <button className="btn btn--solid" type="submit">
+        Search
+      </button>
+    </form>
   );
 }
