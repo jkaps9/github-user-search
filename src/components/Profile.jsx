@@ -7,8 +7,9 @@ import companyIcon from "../assets/icons/icon-company.svg";
 export default function Profile({ userData }) {
   const createdDate = new Date(userData.created_at);
 
+  if (userData.length === 0) return <></>;
   return (
-    <div className={styles.profileCard}>
+    <div className={`card ${styles.profileCard}`}>
       <div className={styles.profileImage}>
         <img
           src={userData.avatar_url}

@@ -8,6 +8,8 @@ const BASE_URL = "https://api.github.com/users";
 
 export default function App() {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [currentUser, setCurrentUser] = useState("octocat");
 
   const updateUser = (newUser) => {
@@ -16,6 +18,7 @@ export default function App() {
 
   useEffect(() => {
     const fetchData = async () => {
+      setError(null);
       try {
         const response = await fetch(`${BASE_URL}/${currentUser}`);
         if (!response.ok) {
@@ -24,8 +27,11 @@ export default function App() {
 
         const result = await response.json();
         setData(result);
-      } catch (error) {
-        console.error(error);
+      } catch (err) {
+        setError(err.message);
+        setData([]);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -35,9 +41,27 @@ export default function App() {
     <>
       <Header></Header>
       <div className="container">
-        <SearchBar onApply={updateUser}></SearchBar>
+        <SearchBar onApply={updateUser} errorMessage={error}></SearchBar>
       </div>
       <div className="container">
+        {error ? (
+          <div className="card">
+            <h2>No results found!</h2>
+            <p>
+              We couldn’t find any GitHub users matching your search. Please
+              double-check the username and try again.
+            </p>
+            <p>log: {error}</p>
+          </div>
+        ) : (
+          <>
+            {loading ?? (
+              <div className="card">
+                <h2>Loading...</h2>{" "}
+              </div>
+            )}
+          </>
+        )}
         <Profile userData={data}></Profile>
       </div>
     </>
