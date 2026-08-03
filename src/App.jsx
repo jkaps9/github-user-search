@@ -38,8 +38,7 @@ export default function App() {
         <SearchBar onApply={updateUser}></SearchBar>
       </div>
       <div className="container">
-        <Profile></Profile>
-        <div>{JSON.stringify(data)}</div>
+        <Profile userData={data}></Profile>
       </div>
     </>
   );

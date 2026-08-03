@@ -4,36 +4,43 @@ import twitterIcon from "../assets/icons/icon-twitter.svg";
 import websiteIcon from "../assets/icons/icon-website.svg";
 import companyIcon from "../assets/icons/icon-company.svg";
 
-export default function Profile() {
+export default function Profile({ userData }) {
+  const createdDate = new Date(userData.created_at);
+
   return (
     <div className={styles.profileCard}>
       <div className={styles.profileImage}></div>
       <div className={styles.profileHeader}>
         <div>
-          <h2 id="displayName">The Octocat</h2>
+          <h2 id="displayName">{userData.name}</h2>
           <p id="userName" className="accent-text">
-            @octocat
+            @{userData.login}
           </p>
         </div>
-        <p id="joinDate">Joined 25 Jan 2011</p>
+        <p id="joinDate">
+          Joined{" "}
+          {createdDate.toLocaleString("en-us", {
+            dateStyle: "medium",
+          })}
+        </p>
       </div>
       <div className={styles.profileDetails}>
         <p id="bio" className={styles.notAvailable}>
-          This profile has no bio
+          {userData.bio || "This profile has no bio"}
         </p>
         <div className={styles.profileStats}>
           <ul className={styles.profileListStats}>
             <li>
               <p className={styles.statKey}>Repos</p>
-              <p className={styles.statValue}>8</p>
+              <p className={styles.statValue}>{userData.public_repos}</p>
             </li>
             <li>
               <p className={styles.statKey}>Followers</p>
-              <p className={styles.statValue}>3938</p>
+              <p className={styles.statValue}>{userData.followers}</p>
             </li>
             <li>
               <p className={styles.statKey}>Following</p>
-              <p className={styles.statValue}>9</p>
+              <p className={styles.statValue}>{userData.following}</p>
             </li>
           </ul>
         </div>
@@ -46,7 +53,9 @@ export default function Profile() {
                 aria-hidden="true"
                 className={styles.linkIcon}
               />
-              <p className={styles.link}>San Francisco</p>
+              <p className={styles.link}>
+                {userData.location || "Not Available"}
+              </p>
             </li>
             <li className={`${styles.profileListRow} ${styles.notAvailable}`}>
               <img
@@ -56,7 +65,7 @@ export default function Profile() {
                 className={styles.linkIcon}
               />
               <a href="/" className={styles.link}>
-                Not Available
+                {userData.twitter_username || "Not Available"}
               </a>
             </li>
             <li className={styles.profileListRow}>
@@ -67,7 +76,7 @@ export default function Profile() {
                 className={styles.linkIcon}
               />
               <a href="/" className={styles.link}>
-                https://github.blog
+                {userData.blog || "Not Available"}
               </a>
             </li>
             <li className={styles.profileListRow}>
@@ -78,7 +87,7 @@ export default function Profile() {
                 className={styles.linkIcon}
               />
               <a href="/" className={styles.link}>
-                @github
+                {userData.company || "Not Available"}
               </a>
             </li>
           </ul>
