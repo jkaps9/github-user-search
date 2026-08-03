@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import sunIcon from "../assets/icons/icon-sun.svg";
-import moonIcon from "../assets/icons/icon-moon.svg";
+import SunIcon from "../assets/icons/icon-sun.svg?react";
+import MoonIcon from "../assets/icons/icon-moon.svg?react";
 import styles from "./ThemeToggle.module.css";
 
 export default function ThemeToggle() {
@@ -37,12 +37,12 @@ export default function ThemeToggle() {
       {isDark ? (
         <>
           <span>Light</span>
-          <img src={sunIcon} alt="" aria-hidden="true" />
+          <SunIcon></SunIcon>
         </>
       ) : (
         <>
           <span>Dark</span>
-          <img src={moonIcon} alt="" aria-hidden="true" />
+          <MoonIcon></MoonIcon>
         </>
       )}
     </button>

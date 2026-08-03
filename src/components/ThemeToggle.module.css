@@ -10,15 +10,7 @@
   text-transform: uppercase;
   transition: color 0.3s;
 
-  svg {
-    fill: var(--color-error);
-  }
-
   &:hover {
     color: var(--color-header-text);
-
-    svg * {
-      fill: var(--color-header-text);
-    }
   }
 }
